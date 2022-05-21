@@ -9,7 +9,6 @@
 // 1 2 4 7
 // 2 3 5 9
 // 2 4 4 8
-
 int[,] CreateRandomArray2(int size0, int size1)
 {
     int[,] array = new int[size0, size1];
@@ -81,16 +80,15 @@ int[,] CreateRandomArray2(int size0, int size1)
     }
     return array;
 }
-int iWithMinSum(int[,] array)
+int rowWithMinSum(int[,] array)
 {
     int sum = 0;
     int min = 0;
-    int i = 0;
+    int row = 0;
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-
             if (i == 0)
             {
                 sum += array[i, j];
@@ -104,16 +102,15 @@ int iWithMinSum(int[,] array)
         if (sum < min)
         {
             min = sum;
-            i = i + 1;
+            row = i + 1;
         }
         sum = 0;
     }
     Console.WriteLine();
-    return i;
+    return row;
 }
-
 int[,] myArray = CreateRandomArray2(4, 4);
-Console.WriteLine(iWithMinSum(myArray) + " строка");
+Console.WriteLine(rowWithMinSum(myArray) + " строка");
 
 */
 
